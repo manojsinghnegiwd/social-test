@@ -5,6 +5,7 @@ import {Provider} from 'react-redux';
 import reducer from './reducer';
 import {AppContainer} from './components/App';
 import {compose, createStore} from 'redux';
+import {Router, Route, browserHistory} from 'react-router';
 
 const createStoreDevTools = compose(
 	window.devToolsExtension ? window.devToolsExtension() : f => f
@@ -22,7 +23,9 @@ store.dispatch({
 
 ReactDOM.render(
 	<Provider store={store}>
-		<AppContainer />
+		<Router history={browserHistory}>
+	      <Route path="/" component={AppContainer} />
+	    </Router>
 	</Provider>,
 	document.getElementById('app')
 );
