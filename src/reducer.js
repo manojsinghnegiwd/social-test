@@ -15,5 +15,9 @@ export default function (state = Map(), action) {
 			return setState(state, action.state);
 		case actionTypes.UPDATE_ACTIVITIES:
 			return updateActivities(state, action.activities);
+		case actionTypes.START_FETCHING_LOADING:
+			return state.set('fetchingActivities', true);
+		case actionTypes.STOP_FETCHING_LOADING:
+			return state.set('fetchingActivities', false);
 	}
 }

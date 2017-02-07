@@ -14,6 +14,7 @@ const store = createStore(reducer, applyMiddleware(thunk));
 store.dispatch({
 	type: 'SET_STATE',
 	state: {
+		fetchingActivities: false,
 		activities: []
 	}
 });

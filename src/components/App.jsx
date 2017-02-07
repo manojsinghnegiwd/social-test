@@ -20,6 +20,7 @@ export class App extends React.Component {
 function mapStateToProps(state) {
 	return {
 		activities: state.get('activities'),
+		fetchingActivities: state.get('fetchingActivities')
 	};
 }
 
