@@ -5,14 +5,11 @@ import {Provider} from 'react-redux';
 import reducer from './reducer';
 import {AppContainer} from './components/App';
 import {ActivitiesPage} from './containers';
-import {compose, createStore} from 'redux';
+import {compose, createStore, applyMiddleware} from 'redux';
 import {Router, Route, browserHistory, IndexRoute} from 'react-router';
+import thunk from 'redux-thunk';
 
-const createStoreDevTools = compose(
-	window.devToolsExtension ? window.devToolsExtension() : f => f
-)(createStore);
-
-const store = createStoreDevTools(reducer);
+const store = createStore(reducer, applyMiddleware(thunk));
 
 store.dispatch({
 	type: 'SET_STATE',

@@ -14,6 +14,6 @@ export default function (state = Map(), action) {
 		case actionTypes.SET_STATE:
 			return setState(state, action.state);
 		case actionTypes.UPDATE_ACTIVITIES:
-			return updateActivities(state, action.color);
+			return updateActivities(state, action.activities);
 	}
 }
