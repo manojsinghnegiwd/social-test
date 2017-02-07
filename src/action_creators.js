@@ -1,6 +1,10 @@
+import * as actionTypes from './actionTypes';
+
 export function changeColor(color) {
-	return {
-		type: 'CHANGE_COLOR',
-		color
+	return (dispatch) => {
+		dispatch({
+			type: actionTypes.UPDATE_ACTIVITIES,
+			color
+		})
 	}
 }

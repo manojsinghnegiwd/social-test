@@ -1,18 +1,19 @@
 import {Map} from 'immutable';
+import * as actionTypes from './actionTypes';
 
 function setState(state, newState) {
 	return state.merge(newState);
 }
 
-function changeColor(state, color) {
-	return state.set('textColor', color);
+function updateActivities(state, activities) {
+	return state.set('activities', activities);
 }
 
 export default function (state = Map(), action) {
 	switch(action.type) {
-		case 'SET_STATE':
+		case actionTypes.SET_STATE:
 			return setState(state, action.state);
-		case 'CHANGE_COLOR':
-			return changeColor(state, action.color);
+		case actionTypes.UPDATE_ACTIVITIES:
+			return updateActivities(state, action.color);
 	}
 }

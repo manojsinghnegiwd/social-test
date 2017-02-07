@@ -1,22 +1,30 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import Text from './Text';
+import {bindActionCreators} from 'redux';
 import * as actionCreators from '../action_creators';
 
 export class App extends React.Component {
 
     render() {
+
+    	let children_with_props = React.cloneElement(this.props.children, {...this.props});
+
         return (
-        	<Text {...this.props} />
+        	<div>
+        		{children_with_props}
+        	</div>
         );
     }
 }
 
 function mapStateToProps(state) {
 	return {
-		message: state.get('message'),
-		textColor: state.get('textColor')
+		activities: state.get('activities'),
 	};
 }
 
-export const AppContainer = connect(mapStateToProps, actionCreators)(App);
+function mapDispatchToProps (dispatch) {
+  return bindActionCreators(actionCreators, dispatch);
+}
+
+export const AppContainer = connect(mapStateToProps, mapDispatchToProps)(App);
