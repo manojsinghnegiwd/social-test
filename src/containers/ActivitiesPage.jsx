@@ -1,10 +1,11 @@
 import React from 'react';
+import Activities from '../components/Activities'; // main activities component
 
 // main activities page
 export default class ActivitiesPage extends React.Component {
-	
-	componentWillReceiveProps (nextProps) {
-		console.log(nextProps)
+
+	componentWillMount = () => {
+		this._getActivities();
 	}
 
 	_getActivities = () => {
@@ -14,6 +15,7 @@ export default class ActivitiesPage extends React.Component {
 	}
 
 	render () {
-		return <div onClick={this._getActivities}>ActivitiesPage </div>
+		const {activities} = this.props;
+		return <Activities activities={activities} />
 	}
 }
