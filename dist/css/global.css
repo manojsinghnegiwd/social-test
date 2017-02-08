@@ -1,0 +1,8 @@
+.center-block {
+	float: none;
+}
+
+.activity .activity-header {
+	float: left;
+    width: 100%;
+}

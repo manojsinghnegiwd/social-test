@@ -15,7 +15,7 @@ export default class ActivitiesPage extends React.Component {
 	}
 
 	render () {
-		const {activities} = this.props;
-		return <Activities activities={activities} />
+		const {activities,fetchingActivities} = this.props;
+		return <Activities activities={activities} fetchingActivities={fetchingActivities} />
 	}
 }
