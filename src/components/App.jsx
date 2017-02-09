@@ -2,6 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import * as actionCreators from '../action_creators';
+import {Link} from 'react-router';
 
 export class App extends React.Component {
 
@@ -11,6 +12,10 @@ export class App extends React.Component {
 
         return (
         	<div>
+        		<div className="text-center header-links">
+        			<Link to="/">Activities</Link>
+        			<Link to="/stats">Analytics</Link>
+        		</div>
         		{children_with_props}
         	</div>
         );
@@ -19,8 +24,13 @@ export class App extends React.Component {
 
 function mapStateToProps(state) {
 	return {
-		activities: state.get('activities'),
-		fetchingActivities: state.get('fetchingActivities')
+		activities: state.activities,
+		fetchingActivities: state.fetchingActivities,
+		channels: state.channels,
+		popularActivities: state.popularActivities,
+		mostLiked: state.mostLiked,
+		mostShared: state.mostShared,
+		mostCommented: state.mostCommented
 	};
 }
 

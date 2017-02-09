@@ -1,8 +1,60 @@
+body {
+	padding: 50px 0px;
+	float: left;
+	width: 100%;
+}
+
 .center-block {
 	float: none;
+}
+
+.full-width {
+	width: 100%;
+}
+
+.no-padding {
+	padding: 0px !important;
+}
+
+.header-links a {
+	font-size: 20px;
+    padding: 0px 15px;
+}
+
+.activity {
+	border: 2px solid #e6e6e6;
+    padding: 15px;
+    box-shadow: 0px 1px 5px 0px rgba(224, 224, 224, 0.75);
+    margin: 10px 0px;
 }
 
 .activity .activity-header {
 	float: left;
     width: 100%;
+    margin-bottom: 10px;
+}
+
+.activity .activity-meta {
+	margin-left: 10px;
+}
+
+.activity .activity-footer {
+	margin-top: 10px; 
+}
+
+.activity .activity-footer li {
+	cursor: pointer;
+}
+
+.activity .activity-footer li .fa {
+	padding-right: 5px;
+}
+.activity .activity-footer li.active {
+	color: #e53935;
+}
+
+.stat-heading {
+	font-size: 25px;
+	margin-top: 50px;
+	display:inline-block;
 }

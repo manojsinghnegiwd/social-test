@@ -12,7 +12,7 @@ export function getActivities () {
 					});
 					dispatch({
 						type: actionTypes.UPDATE_ACTIVITIES,
-						activities: data
+						activities: data.slice(0, 50)
 					});
 				}
 			});
@@ -32,5 +32,75 @@ export function stopFetchingActivities () {
 		dispatch({
 			type: actionTypes.STOP_FETCHING_LOADING,
 		});
+	}
+}
+
+export function like (id) {
+	return dispatch => {
+		dispatch({
+			type: actionTypes.LIKE_ACTIVITY,
+			id
+		})
+	}
+}
+
+
+export function unlike (id) {
+	return dispatch => {
+		dispatch({
+			type: actionTypes.UNLIKE_ACTIVITY,
+			id
+		})
+	}
+}
+
+export function submitReply (reply, id) {
+	return dispatch => {
+		dispatch({
+			type: actionTypes.ADD_REPLY,
+			id,
+			reply
+		})
+	}
+}
+
+export function sortChannels () {
+	return dispatch => {
+		dispatch({
+			type: actionTypes.SORT_CHANNELS
+		})
+	}
+}
+
+export function getPopularActivities (limit) {
+	return dispatch => {
+		dispatch({
+			type: actionTypes.GET_POPULAR_ACTIVITIES,
+			limit
+		})
+	}
+}
+
+export function getMostLiked () {
+	return dispatch => {
+		dispatch({
+			type: actionTypes.GET_MOST_LIKED
+		})
+	}
+}
+
+export function getMostCommented () {
+	return dispatch => {
+		dispatch({
+			type: actionTypes.GET_MOST_COMMENTED
+		})
+	}
+}
+
+export function getMostShared () {
+	return dispatch => {
+		dispatch({
+			type: actionTypes.GET_MOST_SHARED
+		})
 	}
 }
